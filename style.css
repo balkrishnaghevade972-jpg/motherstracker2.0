@@ -16,7 +16,7 @@ body {
 .container {
 
   width: 90%;
-  max-width: 950px;
+  max-width: 1000px;
   margin: auto;
   padding: 30px;
   text-align: center;
@@ -35,6 +35,7 @@ body {
   padding: 10px;
   border-radius: 10px;
   border: none;
+  font-size: 16px;
 }
 
 h1 {
@@ -75,7 +76,8 @@ h1 {
 .card:hover,
 .result:hover,
 .water-card:hover,
-.bmi-card:hover {
+.bmi-card:hover,
+.progress-section:hover {
 
   transform: translateY(-5px);
 }
@@ -88,6 +90,7 @@ select {
   margin: 10px;
   border-radius: 10px;
   border: 1px solid #ccc;
+  font-size: 16px;
 }
 
 button {
@@ -169,6 +172,7 @@ button:hover {
   top: 10px;
   font-size: 30px;
   cursor: pointer;
+  color: #d63384;
 }
 
 .meal-box {
@@ -177,6 +181,16 @@ button:hover {
   padding: 20px;
   border-radius: 15px;
   text-align: left;
+}
+
+.meal-box h2 {
+
+  color: #d63384;
+}
+
+.meal-box h3 {
+
+  color: #ff3385;
 }
 
 @media screen and (max-width: 600px) {
@@ -190,5 +204,11 @@ button:hover {
   select {
 
     width: 100%;
+  }
+
+  .top-bar {
+
+    flex-direction: column;
+    gap: 10px;
   }
 }
