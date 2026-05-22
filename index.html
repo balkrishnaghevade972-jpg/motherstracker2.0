@@ -16,8 +16,6 @@
 
   <div class="container">
 
-    <!-- Top Bar -->
-
     <div class="top-bar">
 
       <select id="language" onchange="changeLanguage()">
@@ -33,8 +31,6 @@
 
     </div>
 
-    <!-- Title -->
-
     <h1 id="title">
       🌸 Nutrition Tracker for Mothers
     </h1>
@@ -43,13 +39,9 @@
       Healthy Mothers, Healthy Future
     </p>
 
-    <!-- Quote -->
-
-    <div class="quote-box">
-      “A healthy mother builds a healthy generation.”
+    <div class="quote-box" id="quoteBox">
+      A healthy mother builds a healthy generation.
     </div>
-
-    <!-- Form -->
 
     <div class="card">
 
@@ -87,13 +79,13 @@
 
     </div>
 
-    <!-- BMI -->
-
     <div class="bmi-card">
 
-      <h2>💪 BMI Calculator</h2>
+      <h2 id="bmiTitle">
+        💪 BMI Calculator
+      </h2>
 
-      <button onclick="calculateBMI()">
+      <button onclick="calculateBMI()" id="bmiButton">
         Calculate BMI
       </button>
 
@@ -101,25 +93,27 @@
 
     </div>
 
-    <!-- Water Tracker -->
-
     <div class="water-card">
 
-      <h2>💧 Water Intake Tracker</h2>
+      <h2 id="waterTitle">
+        💧 Water Intake Tracker
+      </h2>
 
-      <p id="waterCount">0 Glasses</p>
+      <p id="waterCount">
+        0 Glasses
+      </p>
 
-      <button onclick="addWater()">
+      <button onclick="addWater()" id="waterButton">
         + Add Water
       </button>
 
     </div>
 
-    <!-- Progress Bar -->
-
     <div class="progress-section">
 
-      <h2>🌿 Nutrition Progress</h2>
+      <h2 id="progressTitle">
+        🌿 Nutrition Progress
+      </h2>
 
       <div class="progress-bar">
 
@@ -128,8 +122,6 @@
       </div>
 
     </div>
-
-    <!-- Result -->
 
     <div class="result" id="result">
 
@@ -144,8 +136,6 @@
     </div>
 
   </div>
-
-  <!-- Popup -->
 
   <div id="popup" class="popup">
 
