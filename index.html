@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nutrition Tracker for Mothers</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Top Bar -->
+
+    <div class="top-bar">
+
+      <select id="language" onchange="changeLanguage()">
+
+        <option value="english">English</option>
+        <option value="marathi">मराठी</option>
+
+      </select>
+
+      <button onclick="toggleDarkMode()" class="dark-btn">
+        🌙 Dark Mode
+      </button>
+
+    </div>
+
+    <!-- Title -->
+
+    <h1 id="title">
+      🌸 Nutrition Tracker for Mothers
+    </h1>
+
+    <p class="subtitle" id="subtitle">
+      Healthy Mothers, Healthy Future
+    </p>
+
+    <!-- Quote -->
+
+    <div class="quote-box">
+      “A healthy mother builds a healthy generation.”
+    </div>
+
+    <!-- Form -->
+
+    <div class="card">
+
+      <input
+        type="text"
+        id="name"
+        placeholder="Enter Mother's Name"
+      >
+
+      <input
+        type="number"
+        id="weight"
+        placeholder="Enter Weight (KG)"
+      >
+
+      <input
+        type="number"
+        id="height"
+        placeholder="Enter Height (CM)"
+      >
+
+      <select id="stage">
+
+        <option>Before Pregnancy</option>
+        <option>First Trimester</option>
+        <option>Second Trimester</option>
+        <option>Third Trimester</option>
+        <option>After Pregnancy</option>
+
+      </select>
+
+      <button onclick="generatePlan()" id="btn">
+        Generate Nutrition Plan
+      </button>
+
+    </div>
+
+    <!-- BMI -->
+
+    <div class="bmi-card">
+
+      <h2>💪 BMI Calculator</h2>
+
+      <button onclick="calculateBMI()">
+        Calculate BMI
+      </button>
+
+      <p id="bmiResult"></p>
+
+    </div>
+
+    <!-- Water Tracker -->
+
+    <div class="water-card">
+
+      <h2>💧 Water Intake Tracker</h2>
+
+      <p id="waterCount">0 Glasses</p>
+
+      <button onclick="addWater()">
+        + Add Water
+      </button>
+
+    </div>
+
+    <!-- Progress Bar -->
+
+    <div class="progress-section">
+
+      <h2>🌿 Nutrition Progress</h2>
+
+      <div class="progress-bar">
+
+        <div class="progress" id="progress"></div>
+
+      </div>
+
+    </div>
+
+    <!-- Result -->
+
+    <div class="result" id="result">
+
+      <h2>
+        🌸 Personalized Nutrition Suggestions
+      </h2>
+
+      <p>
+        Your nutrition details will appear here.
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- Popup -->
+
+  <div id="popup" class="popup">
+
+    <div class="popup-content">
+
+      <span class="close" onclick="closePopup()">
+        &times;
+      </span>
+
+      <div id="popup-data"></div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
