@@ -8,7 +8,7 @@ const content = {
 
     button: "Generate Nutrition Plan",
 
-    bmiTitle: "💪 BMI Calculator",
+    bmiTitle: " BMI Calculator",
 
     bmiButton: "Calculate BMI",
 
@@ -45,7 +45,7 @@ const content = {
 
     button: "पोषण योजना तयार करा",
 
-    bmiTitle: "💪 BMI कॅल्क्युलेटर",
+    bmiTitle: " BMI कॅल्क्युलेटर",
 
     bmiButton: "BMI मोजा",
 
@@ -75,8 +75,6 @@ const content = {
   }
 };
 
-/* Language Change */
-
 function changeLanguage() {
 
   let lang =
@@ -91,22 +89,22 @@ function changeLanguage() {
   document.getElementById("btn").innerHTML =
     content[lang].button;
 
-  document.querySelector(".quote-box").innerHTML =
+  document.getElementById("quoteBox").innerHTML =
     content[lang].quote;
 
-  document.querySelector(".bmi-card h2").innerHTML =
+  document.getElementById("bmiTitle").innerHTML =
     content[lang].bmiTitle;
 
-  document.querySelector(".bmi-card button").innerHTML =
+  document.getElementById("bmiButton").innerHTML =
     content[lang].bmiButton;
 
-  document.querySelector(".water-card h2").innerHTML =
+  document.getElementById("waterTitle").innerHTML =
     content[lang].waterTitle;
 
-  document.querySelector(".water-card button").innerHTML =
+  document.getElementById("waterButton").innerHTML =
     content[lang].waterButton;
 
-  document.querySelector(".progress-section h2").innerHTML =
+  document.getElementById("progressTitle").innerHTML =
     content[lang].progressTitle;
 
   let stage =
@@ -143,8 +141,6 @@ function changeLanguage() {
   }
 }
 
-/* Generate Plan */
-
 function generatePlan() {
 
   let lang =
@@ -153,279 +149,113 @@ function generatePlan() {
   let stage =
     document.getElementById("stage").value;
 
+  let weight =
+    parseFloat(document.getElementById("weight").value);
+
   let meals = "";
 
-  /* Before Pregnancy */
+  let extraFood = "";
 
-  if(stage === content[lang].stages[0]) {
+  if(weight < 50) {
 
-    meals = `
-
-    <div class="meal-box">
-
-      <h2>
-      ${lang === "english"
-      ? "🌸 Before Pregnancy Diet Plan"
-      : "🌸 गर्भधारणेपूर्वी आहार योजना"}
-      </h2>
-
-      <p>
-
-      ${lang === "english"
-
-      ? "Before pregnancy, mothers should eat foods rich in protein, calcium, iron, and vitamins to prepare the body for a healthy pregnancy."
-
-      : "गर्भधारणेपूर्वी महिलांनी प्रोटीन, आयर्न आणि कॅल्शियमयुक्त अन्न खावे."}
-
-      </p>
-
-      <h3>
-      ${lang === "english"
-      ? "🌅 Morning Breakfast"
-      : "🌅 सकाळचा नाश्ता"}
-      </h3>
-
-      <p>
-      🥛 Milk, Oats, Banana and Dry Fruits
-      </p>
-
-      <h3>
-      ${lang === "english"
-      ? "☀ Mid Morning"
-      : "☀ मधल्या वेळचे अन्न"}
-      </h3>
-
-      <p>
-      🍎 Fruits and Coconut Water
-      </p>
-
-      <h3>
-      ${lang === "english"
-      ? "🍛 Afternoon Lunch"
-      : "🍛 दुपारचे जेवण"}
-      </h3>
-
-      <p>
-      🍚 Rice, Dal, Chapati and Vegetables
-      </p>
-
-      <h3>
-      ${lang === "english"
-      ? "☕ Evening Snacks"
-      : "☕ संध्याकाळचा नाश्ता"}
-      </h3>
-
-      <p>
-      🥜 Nuts and Fruit Salad
-      </p>
-
-      <h3>
-      ${lang === "english"
-      ? "🌙 Dinner"
-      : "🌙 रात्रीचे जेवण"}
-      </h3>
-
-      <p>
-      🍲 Soup, Salad and Chapati
-      </p>
-
-    </div>
-    `;
+    extraFood =
+      lang === "english"
+      ? "Extra protein, milk, banana and nuts are recommended for healthy weight gain."
+      : "वजन वाढीसाठी अतिरिक्त प्रोटीन, दूध, केळी आणि ड्रायफ्रूट्स खाणे आवश्यक आहे.";
   }
 
-  /* First Trimester */
+  else if(weight > 70) {
 
-  else if(stage === content[lang].stages[1]) {
-
-    meals = `
-
-    <div class="meal-box">
-
-      <h2>
-      ${lang === "english"
-      ? "🌸 First Trimester Diet Plan"
-      : "🌸 पहिला त्रैमासिक आहार"}
-      </h2>
-
-      <p>
-
-      ${lang === "english"
-
-      ? "During the first trimester, protein and iron-rich foods support early baby growth and reduce weakness."
-
-      : "पहिल्या त्रैमासिकात प्रोटीन आणि आयर्नयुक्त अन्न आवश्यक असते."}
-
-      </p>
-
-      <h3>
-      🌅 ${lang === "english"
-      ? "Morning Breakfast"
-      : "सकाळचा नाश्ता"}
-      </h3>
-
-      <p>
-      🍌 Banana Milkshake and Oats
-      </p>
-
-      <h3>
-      ☀ ${lang === "english"
-      ? "Mid Morning"
-      : "मधल्या वेळचे अन्न"}
-      </h3>
-
-      <p>
-      🍊 Orange Juice and Dry Fruits
-      </p>
-
-      <h3>
-      🍛 ${lang === "english"
-      ? "Afternoon Lunch"
-      : "दुपारचे जेवण"}
-      </h3>
-
-      <p>
-      🍚 Rice, Dal and Paneer
-      </p>
-
-      <h3>
-      ☕ ${lang === "english"
-      ? "Evening Snacks"
-      : "संध्याकाळचा नाश्ता"}
-      </h3>
-
-      <p>
-      🥜 Yogurt and Fruits
-      </p>
-
-      <h3>
-      🌙 ${lang === "english"
-      ? "Dinner"
-      : "रात्रीचे जेवण"}
-      </h3>
-
-      <p>
-      🍲 Vegetable Soup and Chapati
-      </p>
-
-    </div>
-    `;
+    extraFood =
+      lang === "english"
+      ? "Low oil meals, fruits and fiber-rich foods are recommended."
+      : "कमी तेलाचे पदार्थ, फळे आणि फायबरयुक्त अन्न खाणे आवश्यक आहे.";
   }
-
-  /* Second Trimester */
-
-  else if(stage === content[lang].stages[2]) {
-
-    meals = `
-
-    <div class="meal-box">
-
-      <h2>
-      ${lang === "english"
-      ? "🌸 Second Trimester Diet Plan"
-      : "🌸 दुसरा त्रैमासिक आहार"}
-      </h2>
-
-      <p>
-
-      ${lang === "english"
-
-      ? "The second trimester needs extra calcium and proteins for baby bone development."
-
-      : "दुसऱ्या त्रैमासिकात कॅल्शियम आणि प्रोटीन आवश्यक असते."}
-
-      </p>
-
-      <h3>🌅 Morning Breakfast</h3>
-
-      <p>
-      🥞 Idli, Milk and Fruits
-      </p>
-
-      <h3>☀ Mid Morning</h3>
-
-      <p>
-      🍎 Fruit Salad and Juice
-      </p>
-
-      <h3>🍛 Afternoon Lunch</h3>
-
-      <p>
-      🥗 Chapati, Dal and Vegetables
-      </p>
-
-      <h3>☕ Evening Snacks</h3>
-
-      <p>
-      🥜 Dry Fruits and Yogurt
-      </p>
-
-      <h3>🌙 Dinner</h3>
-
-      <p>
-      🍲 Khichdi and Curd
-      </p>
-
-    </div>
-    `;
-  }
-
-  /* Third Trimester */
 
   else {
 
-    meals = `
-
-    <div class="meal-box">
-
-      <h2>
-      ${lang === "english"
-      ? "🌸 Third Trimester / After Pregnancy Diet"
-      : "🌸 तिसरा त्रैमासिक / प्रसूतीनंतर आहार"}
-      </h2>
-
-      <p>
-
-      ${lang === "english"
-
-      ? "During the final stage and after delivery, mothers require more energy, calcium, and fiber for recovery."
-
-      : "प्रसूतीनंतर शरीराला जास्त ऊर्जा आणि पोषण आवश्यक असते."}
-
-      </p>
-
-      <h3>🌅 Morning Breakfast</h3>
-
-      <p>
-      🥣 Oats, Fruits and Milk
-      </p>
-
-      <h3>☀ Mid Morning</h3>
-
-      <p>
-      🍎 Coconut Water and Fruits
-      </p>
-
-      <h3>🍛 Afternoon Lunch</h3>
-
-      <p>
-      🍛 Brown Rice and Vegetables
-      </p>
-
-      <h3>☕ Evening Snacks</h3>
-
-      <p>
-      🥗 Sprouts Salad
-      </p>
-
-      <h3>🌙 Dinner</h3>
-
-      <p>
-      🍲 Soup and Multigrain Roti
-      </p>
-
-    </div>
-    `;
+    extraFood =
+      lang === "english"
+      ? "Maintain a balanced healthy diet with proteins and vitamins."
+      : "संतुलित प्रोटीन आणि व्हिटॅमिनयुक्त आहार घ्या.";
   }
+
+  meals = `
+
+  <div class="meal-box">
+
+    <h2>
+    ${
+      lang === "english"
+      ? "🌸 Personalized Diet Plan"
+      : "🌸 वैयक्तिक आहार योजना"
+    }
+    </h2>
+
+    <p>${extraFood}</p>
+
+    <h3>
+    ${
+      lang === "english"
+      ? "🌅 Morning Breakfast"
+      : "🌅 सकाळचा नाश्ता"
+    }
+    </h3>
+
+    <p>
+    🥛 Milk, Oats, Banana and Dry Fruits
+    </p>
+
+    <h3>
+    ${
+      lang === "english"
+      ? "☀ Mid Morning"
+      : "☀ मधल्या वेळचे अन्न"
+    }
+    </h3>
+
+    <p>
+    🍎 Fruits and Coconut Water
+    </p>
+
+    <h3>
+    ${
+      lang === "english"
+      ? "🍛 Afternoon Lunch"
+      : "🍛 दुपारचे जेवण"
+    }
+    </h3>
+
+    <p>
+    🍚 Rice, Dal, Chapati and Vegetables
+    </p>
+
+    <h3>
+    ${
+      lang === "english"
+      ? "☕ Evening Snacks"
+      : "☕ संध्याकाळचा नाश्ता"
+    }
+    </h3>
+
+    <p>
+    🥜 Nuts and Fruit Salad
+    </p>
+
+    <h3>
+    ${
+      lang === "english"
+      ? "🌙 Dinner"
+      : "🌙 रात्रीचे जेवण"
+    }
+    </h3>
+
+    <p>
+    🍲 Soup, Salad and Chapati
+    </p>
+
+  </div>
+  `;
 
   document.getElementById("result").innerHTML = `
 
@@ -459,8 +289,6 @@ function generatePlan() {
   }
 }
 
-/* Popup */
-
 function openPopup() {
 
   document.getElementById("popup").style.display =
@@ -473,14 +301,10 @@ function closePopup() {
     "none";
 }
 
-/* Dark Mode */
-
 function toggleDarkMode() {
 
   document.body.classList.toggle("dark-mode");
 }
-
-/* Water Tracker */
 
 let water = 0;
 
@@ -491,8 +315,6 @@ function addWater() {
   document.getElementById("waterCount").innerHTML =
     water + " Glasses";
 }
-
-/* BMI Calculator */
 
 function calculateBMI() {
 
@@ -527,8 +349,6 @@ function calculateBMI() {
   document.getElementById("bmiResult").innerHTML =
     "BMI: " + bmi + " (" + status + ")";
 }
-
-/* Progress Bar */
 
 function updateProgress() {
 
